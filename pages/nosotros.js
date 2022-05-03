@@ -16,7 +16,8 @@ const Nosotros = () => {
                     src='/img/nosotros.jpg' 
                     alt='Nosotros' 
                     width={600} 
-                    height={450} />
+                    height={450}
+                    priority />
 
             <div>
               <p>

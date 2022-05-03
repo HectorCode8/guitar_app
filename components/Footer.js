@@ -6,10 +6,10 @@ const Footer = () => {
     <footer className={styles.footer}>
         <div className={`contenedor ${styles.contenido}`}>
         <nav className={styles.navegacion}>
-                <Link href="/">Inicio</Link>
-                <Link href="/nosotros">Nosotros</Link>
-                <Link href="/blog">Blog</Link>
-                <Link href="/tienda">Tienda</Link>
+                <Link href="/" >Inicio</Link>
+                <Link href="/nosotros" >Nosotros</Link>
+                <Link href="/blog" >Blog</Link>
+                <Link href="/tienda" >Tienda</Link>
             </nav>
 
             <p className={styles.copr}>
