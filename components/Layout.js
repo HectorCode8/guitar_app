@@ -1,5 +1,5 @@
-import React from 'react'
 import Head from 'next/head'
+import Header from '../components/Header'
 
 
 
@@ -12,6 +12,8 @@ const Layout = ({children, pagina}) => {
                 name="description" 
                 content="Sitio Web de venta de guitarras" />
         </Head>
+
+        <Header />
         
 
         {children}
