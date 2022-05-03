@@ -13,7 +13,7 @@ const Layout = ({children, pagina}) => {
                 content="Sitio Web de venta de guitarras" />
         </Head>
 
-        <Header />
+        <Header/>
         
 
         {children}
