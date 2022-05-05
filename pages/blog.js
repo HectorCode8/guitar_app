@@ -1,19 +1,7 @@
-import { useEffect } from 'react';
 import Layout from '../components/Layout'
 
-const Blog = () => {
-
-  useEffect(() => {
-    const consultarAPI = async () => {
-      const url = 'http://localhost:1337/blogs'
-      const respuesta = await fetch(url)
-      const resultado = await respuesta.json()
-
-      console.log(resultado)
-    }
-    consultarAPI()
-  }, [])
-
+const Blog = ({entradas}) => {
+  console.log(entradas)
   return (
     <Layout
         pagina='Blog'
@@ -23,4 +11,18 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export async function getServerSideProps() {
+
+  const url = 'http://localhost:1337/blogs'
+  const respuesta = await fetch(url)
+  const entradas = await respuesta.json()
+
+
+  return {
+    props: {
+      entradas
+    }
+  }
+}
+
+export default Blog 
