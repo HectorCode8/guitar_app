@@ -31,7 +31,6 @@ export async function getServerSideProps() {
   const respuesta = await fetch(url)
   const entradas = await respuesta.json()
 
-
   return {
     props: {
       entradas
