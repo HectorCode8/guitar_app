@@ -1,6 +1,11 @@
+import { useEffect} from 'react';
 import Layout from '../components/Layout'
 
 const Blog = () => {
+
+  useEffect(() => {
+    
+  })
   return (
     <Layout
         pagina='Blog'
