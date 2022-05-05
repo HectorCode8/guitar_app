@@ -9,10 +9,10 @@ const EntradaBlog = () => {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({query: {id}}) {
     return{
         props: {
-            
+
         }
     }
 }
