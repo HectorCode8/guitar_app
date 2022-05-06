@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import Listado from '../components/Listado'
 
 const Tienda = ({guitarras}) => {
   console.log(guitarras)
@@ -8,6 +9,11 @@ const Tienda = ({guitarras}) => {
     >
         <main className='contenedor'>
           <h1 className='heading'>Nuestra Coleccion</h1>
+
+          <Listado 
+            guitarras={guitarras}
+          
+          />
         </main>
     </Layout>
   )
