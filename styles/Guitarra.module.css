@@ -1,29 +1,32 @@
-.entrada {
-    max-width: 80rem;
-    margin: 0 auto;
+.guitarra {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 1rem;
+    align-items: center;
 }
 
 .contenido {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .contenido h3 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin: 0;
-    line-height: 1.2;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
-.fecha {
-    font-size: 1.6rem;
-    color: var(--primary);
-}
-
-.resumen {
+.descripcion {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     overflow: hidden;
+}
+
+.precio {
+    color: var(--primary);
+    font-size: 6rem;
+    font-weight: 700;
+    margin: 0;
 }
 
 .enlace {
@@ -32,7 +35,7 @@
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 900;
     color: var(--negro);
     border: 2px solid var(--primary);
@@ -44,8 +47,4 @@
 .enlace:hover {
     background-color: var(--primary);
     color: var(--blanco);
-}
-
-.texto {
-    white-space: pre-wrap;
 }
