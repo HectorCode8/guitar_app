@@ -5,7 +5,7 @@ import styles from '../../styles/Entrada.module.css'
 
 const EntradaBlog = ({entrada}) => {
     
-    const {contenido, imagen, published_at, titulo} = entrada[0]
+const {contenido, imagen, published_at, titulo} = entrada[0]
 
   return (
     <Layout
