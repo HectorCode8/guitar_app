@@ -3,33 +3,29 @@ import Image from 'next/image'
 import { formatearFecha } from '../../helpers'
 import styles from '../../styles/Entrada.module.css'
 
-const EntradaBlog = ({entrada}) => {
-    
-const {contenido, imagen, published_at, titulo} = entrada[0]
+const EntradaBlog = ({entrada}) => {  
+    const {contenido, imagen, published_at, titulo} = entrada[0]
 
-  return (
-    <Layout
-        pagina={titulo}
+    return (
+        <Layout
+            pagina={titulo}
     >
-        <main className="contenedor">
-            <h1 className="heading">{titulo}</h1>
-
-            <article className={styles.entrada}>
-                <Image layout='responsive' 
-                        width={800}
-                        height={600}
-                        src={imagen.url}
-                        alt={`Imagen entrada ${titulo}`}
-                        priority='true'
-                 />
-
-                 <div className={styles.contenido}>
-                    <p className={styles.fecha}>{formatearFecha(published_at)}</p>
-                    <p className={styles.texto}>{contenido}</p>
-                 </div>
-
-            </article>
-        </main>
+            <main className="contenedor">
+                <h1 className="heading">{titulo}</h1>
+                <article className={styles.entrada}>
+                    <Image layout='responsive' 
+                            width={800}
+                            height={600}
+                            src={imagen.url}
+                            alt={`Imagen entrada ${titulo}`}
+                            priority='true'
+                    />
+                    <div className={styles.contenido}>
+                        <p className={styles.fecha}>{formatearFecha(published_at)}</p>
+                        <p className={styles.texto}>{contenido}</p>
+                    </div>
+                </article>
+            </main>
     </Layout>
   )
 }
