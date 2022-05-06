@@ -9,8 +9,11 @@ const EntradaBlog = ({entrada}) => {
   )
 }
 
-export async function getServerSideProps({query: {id}}) {
+export async function getStaticPaths() {
 
+}
+
+export async function getStaticProps({query: {id}}) {
     const url = `http://localhost:1337/blogs/${id}`
     const respuesta = await fetch(url)
     const entrada = await respuesta.json()
@@ -21,5 +24,19 @@ export async function getServerSideProps({query: {id}}) {
         }
     }
 }
+
+
+// export async function getServerSideProps({query: {id}}) {
+
+//     const url = `http://localhost:1337/blogs/${id}`
+//     const respuesta = await fetch(url)
+//     const entrada = await respuesta.json()
+
+//     return{
+//         props: {
+//             entrada
+//         }
+//     }
+// }
 
 export default EntradaBlog
