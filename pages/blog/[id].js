@@ -1,11 +1,30 @@
-import {useRouter} from 'next/router'
+import Layout from '../../components/Layout'
+import Image from 'next/image'
+import { formatearFecha } from '../../helpers'
 
 const EntradaBlog = ({entrada}) => {
-    const router = useRouter()
+    
+    const {contenido, imagen, published_at, titulo} = entrada
+
   return (
-    <div>
-        <h1>Desde Entrada Blog</h1>
-    </div>
+    <Layout>
+        <main className="contenedor">
+            <h1 className="heading">{titulo}</h1>
+            <article>
+                <Image layout='responsive' 
+                        width={800}
+                        height={600}
+                        src={imagen.url}
+                        alt={`Imagen entrada ${titulo}`}
+                        priority='true'
+                 />
+                 <div>
+                    <p>{formatearFecha(published_at)}</p>
+                    <p>{contenido}</p>
+                 </div>
+            </article>
+        </main>
+    </Layout>
   )
 }
 
