@@ -5,7 +5,9 @@ const Tienda = () => {
     <Layout
         pagina='Tienda Virtual'
     >
-        <h1>Desde Tienda</h1>
+        <main className='contenedor'>
+          <h1 className='heading'>Nuestra Coleccion</h1>
+        </main>
     </Layout>
   )
 }
