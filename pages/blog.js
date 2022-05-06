@@ -2,7 +2,6 @@ import Layout from '../components/Layout'
 import Entrada from '../components/Entrada'
 import styles from '../styles/Blog.module.css'
 
-
 const Blog = ({entradas}) => {
   return (
     <Layout
