@@ -4,12 +4,12 @@ const Curso = ({curso}) => {
     const {contenido, titulo, imagen} = curso
   return (
     <section>
-        <div className="contenedor">
-            <div>
-                <h2>{titulo}</h2>
-                <p>{contenido}</p>
+        <div className={`contenedor ${styles.grid}`}>
+            <div className={styles.contenido}>
+                <h2 className="heading">{titulo}</h2>
+                <p className={styles.texto}>{contenido}</p>
 
-                <a href="#">Más Informacion</a>
+                <a className={styles.enlace} href="#">Más Informacion</a>
             </div>
         </div>
         <style jsx>{`
