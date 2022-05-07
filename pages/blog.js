@@ -7,7 +7,9 @@ const Blog = ({entradas}) => {
         pagina='Blog'
     >
         <main className='contenedor'>
-          
+          <ListadoBlog 
+            entradas={entradas}
+          />
         </main>
     </Layout>
   )
