@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 const Header = ({guitarra}) => {
-
   const router = useRouter()
 
   return (
