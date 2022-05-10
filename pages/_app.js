@@ -5,7 +5,14 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
   const [carrito, setCarrito] = useState([])
 
-  return <Component {...pageProps} carrito={carrito} />
+  const agregarCarrito = producto => {
+    setCarrito([...carrito, producto])
+  }
+
+  return <Component
+    {...pageProps} 
+    carrito={carrito}  
+    agregarCarrito={agregarCarrito}/>
   
 }
 

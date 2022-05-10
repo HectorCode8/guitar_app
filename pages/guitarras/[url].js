@@ -2,8 +2,13 @@ import Image from 'next/image'
 import styles from '../../styles/Guitarra.module.css'
 import Layout from '../../components/Layout'
 
-const Producto = ({guitarra}) => {
+const Producto = ({guitarra, agregarCarrito}) => {
     const {descripcion, imagen, nombre, precio} = guitarra[0]
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        agregarCarrito(guitarra)
+    }
 
   return (
       <Layout
@@ -23,7 +28,7 @@ const Producto = ({guitarra}) => {
                 <p className={styles.descripcion}>{descripcion}</p>
                 <p className={styles.precio}>${precio}</p>
 
-                <form className={styles.formulario}>
+                <form className={styles.formulario} onSubmit={handleSubmit}>
                     <label>Cantidad:</label>
 
                     <select>
