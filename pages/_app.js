@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import '../styles/normalize.css'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   const [carrito, setCarrito] = useState([])
+
+  useEffect(() => {
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+  }, [carrito])
 
   const agregarCarrito = producto => {
     if(carrito.some( articulo => articulo.id === producto.id )) {
