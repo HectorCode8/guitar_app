@@ -6,8 +6,15 @@ function MyApp({ Component, pageProps }) {
   const [carrito, setCarrito] = useState([])
 
   useEffect(() => {
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-  }, [carrito])
+    const carritoLS = JSON.parse(localStorage.getItem("carrito")) ?? [];
+    if (carritoLS.length !== 0) {
+      setCarrito(carritoLS);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }, [carrito]);
 
   const agregarCarrito = producto => {
     if(carrito.some( articulo => articulo.id === producto.id )) {
