@@ -5,7 +5,7 @@ import Layout from '../../components/Layout'
 
 const Producto = ({guitarra, agregarCarrito}) => {
     const [cantidad, setCantidad] = useState(1)
-    const {descripcion, imagen, nombre, precio} = guitarra[0]
+    const {descripcion, imagen, nombre, precio, id} = guitarra[0]
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -14,7 +14,17 @@ const Producto = ({guitarra, agregarCarrito}) => {
             alert('La cantidad debe ser mayor a 0')
             return
         }
+    
+
+    const guitarraSaleccionada = {
+        id,
+        imagen: imagen.url,
+        nombre,
+        precio,
+        cantidad
+        }
         
+    agregarCarrito(guitarraSaleccionada)
     }
 
   return (
