@@ -1,13 +1,20 @@
 import Image from 'next/image'
+import { useState } from 'react'
 import styles from '../../styles/Guitarra.module.css'
 import Layout from '../../components/Layout'
 
 const Producto = ({guitarra, agregarCarrito}) => {
+    const [cantidad, setCantidad] = useState(1)
     const {descripcion, imagen, nombre, precio} = guitarra[0]
 
     const handleSubmit = e => {
         e.preventDefault()
-        agregarCarrito(guitarra)
+
+        if(cantidad < 1) {
+            alert('La cantidad debe ser mayor a 0')
+            return
+        }
+        
     }
 
   return (
@@ -31,8 +38,11 @@ const Producto = ({guitarra, agregarCarrito}) => {
                 <form className={styles.formulario} onSubmit={handleSubmit}>
                     <label>Cantidad:</label>
 
-                    <select>
-                        <option value=''>-- Seleccione --</option>
+                    <select
+                        value={cantidad}
+                        onChange={(e) => setCantidad(e.target.value)}
+                    >
+                        <option value='0'>-- Seleccione --</option>
                         <option value='1'>1</option>
                         <option value='2'>2</option>
                         <option value='3'>3</option>
