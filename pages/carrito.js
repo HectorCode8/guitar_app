@@ -14,7 +14,7 @@ const Carrito = ({carrito}) => {
                         <div key={producto.id} className={styles.producto}>
                             <div>
                                 <Image layout='responsive' 
-                                        width={250} height={480} 
+                                        width={250} height={500} 
                                         src={producto.imagen} 
                                         alt={producto.nombre} 
                                         priority={true}/>
