@@ -3,7 +3,7 @@ import styles from '../styles/Carrito.module.css'
 import Image from 'next/image'
 
 
-const Carrito = ({carrito, actualizarCantidad}) => {
+const Carrito = ({carrito, actualizarCantidad, eliminarProducto}) => {
   return (
     <Layout pagina={'Carrito de Compras'}> 
         <h1 className="heading">Carrito de Compras</h1>
@@ -42,6 +42,10 @@ const Carrito = ({carrito, actualizarCantidad}) => {
                                 <p className={styles.subtotal}>Subtotal: $<span>{producto.precio * producto.cantidad}</span></p>
 
                             </div>
+
+                            <button type="button" className={styles.eliminar} onClick={() => eliminarProducto(producto.id)}>
+                                X
+                            </button>
 
                         </div>
                     ))
